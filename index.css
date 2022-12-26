@@ -1,68 +1,174 @@
+:root{
+    --lightPink: #FFE8EE;
+    --mediumPink: #F19C98;
+    --darkPink: #F37068;
+    --lightBlue: #AAD5DC;
+    --mediumBlue: #035E79;
+    --darkBlue: #3C3951;
+}
+
 *{
     font-family: 'Ubuntu Mono', monospace;
-    
+    box-sizing: border-box;
 }
 
+body{
+    margin: 10px 10px;
+    background-color: var(--lightPink);
+}
 
-#drink-section {
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
+/* Header styling */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkPink);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--darkBlue);
+    margin: 20px 0;
+}
+
+.header h1{
+    font-family: 'Carter One', cursive;
+    font-size: 70px;
+    color: var(--mediumBlue);
+    -webkit-text-stroke: 2px var(--lightPink);
+}
+
+.header img{
+    width: 15vw;
+    height: 20vh;
+}
+
+/* Drink choice/api interaction styling */
+.drink-choice{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mediumPink);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--darkBlue);
+}
+
+.drink-choice h2{
     text-align: center;
-    margin-top: 50px;
-
+    background-color: var(--darkPink);
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    margin: 0px auto 50px auto;
+    padding: 15px 10px;
+    font-size: 40px;
+    color: var(--darkBlue);
+    -webkit-text-stroke: 1px var(--lightBlue);
+    font-weight: bold;
 }
-  #drink-section > img {
-    width: 400px;
-    height: auto;
-    box-shadow: -4px 3px 18px 2px #272626;
-    border-radius: 5%;
 
-}
-
-/* use "fit-Content" in sizing as it is responsive and looks much nicer */
+/* "Surprise Me" button styling */
 #randomButton {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    height: fit-content;
+    margin: 50px auto;
+    width: 20vw;
+    height: 8vh;
     padding: 0.5em;
     border-radius: 5px;
-    background-color: #fdfbfb;
-    border: 1px solid #fdfbfb;
-    font-size: 1em;
+    background-color: var(--lightBlue);
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--darkBlue);
+    box-shadow: 2px 2px 2px var(--darkBlue);
 }
-/* add a color change on button hover to make usage easier */
 
+/* "Surprise Me" button styling on cursor hover */
 #randomButton:hover {
-    color: #af995e;
+    color: var(--darkPink);
     /* make the button grow slightly */
     transform: scale(1.1);
+    background-color: var(--lightPink);
+    box-shadow: 2px 2px 2px var(--darkPink);
 }
 
 /* use position and justify here to make it look better */
-#ingredientSearch {
-    width: 20vw;
-    margin: 0 auto;
-    padding: 0;
+#ingredientSearch input {
+    width: 30vw;
+    height: 5vh;
+    margin: 10px auto;
     display: flex;
     flex-direction: row;
-    position: relative;
     justify-content: center;
-    font-size: 2em;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px var(--darkBlue);
 }
 
 #findByIngredient {
-      font-size: 1.7rem;
+    width: fit-content;
+    font-size: 20px;
+    margin: auto;
+    padding: 0.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: var(--lightBlue);
+    box-shadow: 2px 2px 2px var(--darkBlue);
+    color: var(--darkBlue)
 }
 
 #findByIngredient:hover {
-    transform: scale(1.2);
-      cursor: pointer;
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: var(--lightPink);
+    box-shadow: 2px 2px 2px var(--darkPink);
+    color: var(--darkPink)
 }
 
-/* used media to make page work on smaller screen */
+/* drink display styling */
+#drink-section {
+    text-align: center;
+    background-color: var(--mediumBlue);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--darkBlue);
+}
+
+#drink-section > h2{
+    background-color: var(--lightBlue);
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 40px;
+    color: var(--mediumBlue);
+    -webkit-text-stroke: 1px var(--darkBlue);
+    font-weight: bold;
+}
+
+  #drink-section > img {
+    width: 400px;
+    height: auto;
+    box-shadow: -4px 3px 18px 2px var(--lightBlue);
+    border-radius: 5%;
+}
+
+p{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--lightBlue);
+}
+
+ul{
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 8px;
+}
+
+
+
+/* media rules for smaller screens */
 @media screen and (max-width: 600px) {
     #ingredientSearch {
       flex-direction: column;
@@ -75,5 +181,10 @@
     #drink-section > p {
       margin-top: 0;
       width: 100%;
+    }
+
+    .header{
+        flex-direction: column;
+        width: 100%;
     }
 }

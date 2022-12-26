@@ -1,5 +1,5 @@
-<!-- cocktail app
-Author Darren Snell-->
+<!-- Intro to Web Dev API App -->
+<!-- Created by Carla Cyr-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,11 +8,12 @@ Author Darren Snell-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
 
     <title>My Cocktail app</title>
 
-    <!-- Defered so i don't need a DOM listener -->
+    <!-- Defered so I don't need a DOM listener -->
     <script defer src="index.js"></script>
   </head>
 
@@ -24,29 +25,31 @@ Author Darren Snell-->
         </div>
 
         <div class="drink-choice">
-            <!-- refresh page to get another random cocktail -->
-            <button id="randomButton">Get Random Cocktail</button>
+            
+            
 
-            <!-- create an ingredient search -->
-            <h2>You can also search for an ingredient <span>&#128071;</span></h2>
-            <div id="ingredientSearch">Ingredient:
+            <!-- Search for cocktail by ingredient -->
+            <h2>Pick Your Poison</h2>
+            <div id="ingredientSearch">
+
                 <input
                     type="text"
                     name="Ingredient"
                     id="cocktailIngredient"
-                    placeholder="i.e. 'Vodka'"
+                    placeholder="Search by Ingredient"
                 />
-                <button id="findByIngredient">Search</button>
             </div>
+            <button id="findByIngredient">Search</button>
+
+            <!-- Cocktail Randomizer -->
+            <button id="randomButton">Surprise Me</button>
 
         </div>
 
-        <div class="drink-card">
-            <!-- section is used to contain API information -->
-            <section id="drink-section">
-            <h2 id="drink-name">Cocktail Name</h2>
-            </section>
-        </div>
+        <!-- section is used to contain API information -->
+        <section id="drink-section">
+        <h2 id="drink-name">Cocktail Name</h2>
+        </section>
 
     </main>
   </body>
