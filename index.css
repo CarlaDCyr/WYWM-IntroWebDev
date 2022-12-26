@@ -1,0 +1,79 @@
+*{
+    font-family: 'Ubuntu Mono', monospace;
+    
+}
+
+
+#drink-section {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+
+}
+  #drink-section > img {
+    width: 400px;
+    height: auto;
+    box-shadow: -4px 3px 18px 2px #272626;
+    border-radius: 5%;
+
+}
+
+/* use "fit-Content" in sizing as it is responsive and looks much nicer */
+#randomButton {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: #fdfbfb;
+    border: 1px solid #fdfbfb;
+    font-size: 1em;
+    cursor: pointer;
+}
+/* add a color change on button hover to make usage easier */
+
+#randomButton:hover {
+    color: #af995e;
+    /* make the button grow slightly */
+    transform: scale(1.1);
+}
+
+/* use position and justify here to make it look better */
+#ingredientSearch {
+    width: 20vw;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    font-size: 2em;
+}
+
+#findByIngredient {
+      font-size: 1.7rem;
+}
+
+#findByIngredient:hover {
+    transform: scale(1.2);
+      cursor: pointer;
+}
+
+/* used media to make page work on smaller screen */
+@media screen and (max-width: 600px) {
+    #ingredientSearch {
+      flex-direction: column;
+      align-items: center;
+    }
+    #findByIngredient {
+      transform: scale(1.1);
+    }
+
+    #drink-section > p {
+      margin-top: 0;
+      width: 100%;
+    }
+}
